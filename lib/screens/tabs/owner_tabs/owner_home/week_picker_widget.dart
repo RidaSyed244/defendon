@@ -1,4 +1,4 @@
-import 'package:defendon/controllers/owner_controllers/owner_home_controllers/week_controller.dart';
+import 'package:defendon/controllers/week_controller.dart';
 import 'package:defendon/utils/app_colors.dart';
 import 'package:defendon/utils/date_time_extensions.dart';
 import 'package:defendon/utils/extensions.dart';
