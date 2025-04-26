@@ -1,5 +1,7 @@
+import 'package:defendon/screens/tabs/jobs_tab/rating_customer_screen.dart';
 import 'package:defendon/utils/app_colors.dart';
 import 'package:defendon/utils/extensions.dart';
+import 'package:defendon/utils/navigation_extensions.dart';
 import 'package:defendon/utils/padding_extensions.dart';
 import 'package:defendon/utils/widget_utility_extensions.dart';
 import 'package:defendon/widgets/primary_button.dart';
@@ -9,7 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class SecurityGuardBookingScreen extends HookWidget {
-  const SecurityGuardBookingScreen({super.key});
+  final bool isAdmin;
+  const SecurityGuardBookingScreen({
+    super.key,
+    this.isAdmin = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -137,15 +143,40 @@ class SecurityGuardBookingScreen extends HookWidget {
                     ),
                   ],
                 ),
+                12.heightBox,
+                // You can handle UI here like in figma ('Start Job' and 'Finish Job') using conditions.
+                if (!isAdmin) ...[
+                  PrimaryButton(
+                    onTap: () {},
+                    text: 'Accept',
+                    borderRadius: 10,
+                    textColor: Colors.black,
+                    color: AppColors.secondaryClr,
+                  ),
+                  14.heightBox,
+                  PrimaryButton(
+                    onTap: () {
+                      context.nextPage(
+                        RatingCustomerScreen(),
+                      );
+                    },
+                    text: 'Decline',
+                    borderRadius: 10,
+                    textColor: Colors.black,
+                    color: AppColors.secondaryClr,
+                  ),
+                ],
               ],
             ),
           ),
           40.heightBox,
-          PrimaryButton(
-            onTap: () {},
-            text: 'Rate & Review Guard',
-            textColor: Colors.white,
-          ),
+          if (isAdmin) ...[
+            PrimaryButton(
+              onTap: () {},
+              text: 'Rate & Review Guard',
+              textColor: Colors.white,
+            ),
+          ],
         ],
       ).p16().safeArea(),
     );

@@ -1,4 +1,4 @@
-import 'package:defendon/screens/tabs/owner_tabs/owner_settings/password_changed_success_screen.dart';
+import 'package:defendon/screens/tabs/settings_tab/success_screen.dart';
 import 'package:defendon/utils/extensions.dart';
 import 'package:defendon/utils/navigation_extensions.dart';
 import 'package:defendon/utils/padding_extensions.dart';
@@ -83,7 +83,9 @@ class ChangePasswordScreen extends HookWidget {
       bottomNavigationBar: PrimaryButton(
         onTap: () {
           context.nextPage(
-            PasswordChangedSuccessScreen(),
+            SuccessScreen(
+              text: 'Password Changed Successfully!',
+            ),
           );
         },
         text: "Change Password",
