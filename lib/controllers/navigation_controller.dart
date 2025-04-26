@@ -1,6 +1,6 @@
 import 'package:defendon/controllers/shared_preference_controller.dart';
+import 'package:defendon/screens/auth/log_in_screen.dart';
 import 'package:defendon/screens/onBoarding/onboarding_screen.dart';
-import 'package:defendon/screens/tabs/user_tabs_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -47,11 +47,13 @@ class NavigationService extends GetxService {
   }
 
   Future<void> navigateToOnboarding() async {
-    await navigateOffAll(OnboardingScreen());
+    await navigateOffAll(
+      OnboardingScreen(),
+    );
   }
 
   Future<void> navigateToLogIn() async {
-    await navigateOffAll(const UserTabsView());
+    await navigateOffAll(const LogInScreen());
   }
 
   Future<void> completeOnboarding() async {
