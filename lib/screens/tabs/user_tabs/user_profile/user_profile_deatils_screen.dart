@@ -68,11 +68,11 @@ class UserProfileDetailsScreen extends StatelessWidget {
             borderRadius: 30,
             child: Column(
               children: [
-                _buildAvailabilityRow(true),
-                _buildAvailabilityRow(false),
-                _buildAvailabilityRow(false),
-                _buildAvailabilityRow(false),
-                _buildAvailabilityRow(false),
+                AvailabilityRowWidget(isPinned: true),
+                AvailabilityRowWidget(isPinned: false),
+                AvailabilityRowWidget(isPinned: false),
+                AvailabilityRowWidget(isPinned: false),
+                AvailabilityRowWidget(isPinned: false),
               ],
             ),
           ),
@@ -129,8 +129,17 @@ class UserProfileDetailsScreen extends StatelessWidget {
       ],
     );
   }
+}
 
-  Widget _buildAvailabilityRow(bool isPinned) {
+class AvailabilityRowWidget extends StatelessWidget {
+  final bool isPinned;
+  const AvailabilityRowWidget({
+    super.key,
+    this.isPinned = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         Text(

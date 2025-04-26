@@ -238,4 +238,15 @@ class Validators {
 
     return null;
   }
+
+  static String? reviewValidator(String? text) {
+    if (text == null || text.trim().isEmpty) {
+      return 'Review cannot be empty';
+    } else if (text.trim().length < 10) {
+      return 'Review must be at least 10 characters';
+    } else if (text.trim().length > 500) {
+      return 'Review must be under 500 characters';
+    }
+    return null;
+  }
 }
