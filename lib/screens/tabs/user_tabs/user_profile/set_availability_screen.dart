@@ -1,4 +1,6 @@
+import 'package:defendon/screens/tabs/user_tabs/user_profile/calendar_time_selection_screen.dart';
 import 'package:defendon/utils/extensions.dart';
+import 'package:defendon/utils/navigation_extensions.dart';
 import 'package:defendon/utils/padding_extensions.dart';
 import 'package:defendon/utils/widget_utility_extensions.dart';
 import 'package:defendon/widgets/primary_button.dart';
@@ -91,7 +93,11 @@ class SetAvailabilityScreen extends HookWidget {
       bottomNavigationBar: PrimaryButton(
         text: 'Next',
         textColor: Colors.white,
-        onTap: () {},
+        onTap: () {
+          context.nextPage(
+            CalendarTimeSelection(),
+          );
+        },
       ).p16().safeArea(),
     );
   }
