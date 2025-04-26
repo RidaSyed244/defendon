@@ -1,8 +1,8 @@
 import 'package:defendon/controllers/bottom_nav_tabs_controller.dart';
 import 'package:defendon/screens/tabs/owner_tabs/owner_home/owner_home_tab.dart';
-import 'package:defendon/screens/tabs/owner_tabs/owner_jobs/owner_jobs_management_screen.dart';
+import 'package:defendon/screens/tabs/jobs_tab/jobs_management_screen.dart';
 import 'package:defendon/screens/tabs/owner_tabs/owner_profile/owner_profile_details_screen.dart';
-import 'package:defendon/screens/tabs/owner_tabs/owner_settings/owner_settings_screen.dart';
+import 'package:defendon/screens/tabs/settings_tab/settings_screen.dart';
 import 'package:defendon/utils/extensions.dart';
 import 'package:defendon/utils/images.dart';
 import 'package:defendon/utils/padding_extensions.dart';

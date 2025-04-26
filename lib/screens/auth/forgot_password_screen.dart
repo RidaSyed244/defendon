@@ -19,6 +19,7 @@ class ForgotPasswordScreen extends HookWidget {
     return Scaffold(
       appBar: ForgotPasswordAppBar(),
       body: Form(
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -80,7 +81,7 @@ class ForgotPasswordScreen extends HookWidget {
               text: 'Next',
             ),
           ],
-        ).p16().safeArea(),
+        ).p16().safeArea().scrollVertical(),
       ),
     );
   }

@@ -1,4 +1,6 @@
+import 'package:defendon/screens/complete_profile/company_set_profile_screen.dart';
 import 'package:defendon/utils/extensions.dart';
+import 'package:defendon/utils/navigation_extensions.dart';
 import 'package:defendon/utils/padding_extensions.dart';
 import 'package:defendon/utils/widget_utility_extensions.dart';
 import 'package:defendon/widgets/image_builder.dart';
@@ -34,7 +36,6 @@ class CompanyUploadImageScreen extends StatelessWidget {
                 file: null,
                 onChanged: (file) {},
                 onTap: () {},
-                
               ),
             ],
           ),
@@ -49,7 +50,11 @@ class CompanyUploadImageScreen extends StatelessWidget {
           ),
           160.heightBox,
           PrimaryButton(
-            onTap: () {},
+            onTap: () {
+              context.nextPage(
+                CompanySetProfileScreen(),
+              );
+            },
             text: 'Next',
             textColor: Colors.white,
           ),

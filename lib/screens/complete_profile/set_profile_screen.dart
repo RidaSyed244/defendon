@@ -1,6 +1,7 @@
 import 'package:defendon/screens/complete_profile/add_profile_details_screen.dart';
 import 'package:defendon/screens/complete_profile/birthdate_picker_dialog.dart';
 import 'package:defendon/screens/complete_profile/gender_selection_dialog.dart';
+import 'package:defendon/screens/tabs/settings_tab/success_screen.dart';
 import 'package:defendon/utils/app_colors.dart';
 import 'package:defendon/utils/extensions.dart';
 import 'package:defendon/utils/navigation_extensions.dart';
@@ -15,7 +16,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class SetProfileScreen extends HookWidget {
-  const SetProfileScreen({super.key});
+  final bool isEdit;
+  const SetProfileScreen({
+    super.key,
+    this.isEdit = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +48,7 @@ class SetProfileScreen extends HookWidget {
             Align(
               alignment: Alignment.center,
               child: Text(
-                'Tell us who you are',
+                isEdit ? 'Edit your profile' : 'Tell us who you are',
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.w600,
@@ -361,10 +366,17 @@ class SetProfileScreen extends HookWidget {
         verticalPadding: 18,
         onTap: () {
           if (!formKey.currentState!.validate()) return;
-
+          if (isEdit) {
+            context.nextPage(
+              SuccessScreen(
+                text: 'Profile edit successfully!',
+              ),
+            );
+            return;
+          }
           context.nextPage(AddProfiledetailsScreen());
         },
-        text: 'Continue',
+        text: isEdit ? 'Update' : 'Continue',
       ).p16().safeArea(),
     );
   }

@@ -23,6 +23,7 @@ class LogInScreen extends HookWidget {
 
     return Scaffold(
       body: Form(
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

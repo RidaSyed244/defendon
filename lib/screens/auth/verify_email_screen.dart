@@ -1,4 +1,6 @@
+import 'package:defendon/screens/auth/company_upload_image_screen.dart';
 import 'package:defendon/utils/extensions.dart';
+import 'package:defendon/utils/navigation_extensions.dart';
 import 'package:defendon/utils/padding_extensions.dart';
 import 'package:defendon/utils/widget_utility_extensions.dart';
 import 'package:defendon/widgets/primary_button.dart';
@@ -94,7 +96,11 @@ class VerifyEmailScreen extends HookWidget {
 
           12.heightBox,
           PrimaryButton(
-            onTap: () {},
+            onTap: () {
+              context.nextPage(
+                CompanyUploadImageScreen(),
+              );
+            },
             text: 'Resend Code',
           ),
         ],
